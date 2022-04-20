@@ -5,13 +5,12 @@ public class Question2
   public static void main(String[] args)
   {
     
-    Scanner input1 = new Scanner(System.in);
-    Scanner input2 = new Scanner(System.in);
+    Scanner in = new Scanner(System.in);
     
     
-    double height = input1.nextDouble();
+    double height = in.nextDouble();
     
-    double weight = input2.nextDouble();
+    double weight = in.nextDouble();
     
     double BMI = weight / (height * height);
     System.out.println(BMI);
