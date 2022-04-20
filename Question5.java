@@ -1,32 +1,39 @@
 import java.util.Scanner;
+import java.util.LinkedList;
+import java.util.*;
 
 public class Question5
 {
   public static void main(String[] args)
   {
-    /**
-     * Prompt the user for number. This input indicates the number of integers the user will be entering next. 
-     * Print out the mode (highest occurrence) from the set of integers. 
-     *    e.g.
-     *     > 5
-     *     > 2
-     *     > 4
-     *     > 1
-     *     > 3
-     *     > 4
-     *     4
-     * 
-     *    e.g.
-     *     > 4
-     *     > 2
-     *     > 2
-     *     > 3
-     *     > 3
-     *     2
-     * Hint: Use a loop to get input. Use another 2 loops to find the mode
-     */
-     
+    //System.out.println("Enter a count:");
     Scanner in = new Scanner(System.in);
+    int input = in.nextInt();
+    LinkedList<Integer> list = new LinkedList<Integer>();
     
+    while(input > 0){
+      //System.out.print("Enter a number:");
+      int num = in.nextInt();
+      list.add(num);
+      input = input - 1 ;
+    }
+
+    //check list of integers within
+    int highestCount = 0;
+    int highestNum = 0;
+    for(int i : list){
+      int times = 0;
+      for(int u : list){
+        if ( u == i){
+          times ++;
+        }
+      }
+      if (times > highestCount){
+        highestCount = times;
+        highestNum = i;
+      }
+    }
+    String s = Integer.toString(highestNum);
+    System.out.println(s);
   }
 }
